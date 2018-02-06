@@ -1,0 +1,25 @@
+{
+  "name": "@slup/monaco",
+  "version": "0.1.0",
+  "description": "A monaco-editor wrapper for Inferno",
+  "main": "index.js",
+  "repository": "https://github.com/slupjs/monaco",
+  "author": "LucaT <fromzeroluke1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "prepublish": "rollup -c"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-plugin-inferno": "3.4.0",
+    "rollup": "0.55.3",
+    "rollup-plugin-babel": "3.0.3",
+    "rollup-plugin-typescript2": "0.11.0",
+    "typescript": "2.7.1"
+  },
+  "peerDependencies": {
+    "inferno": "3.10.1",
+    "inferno-component": "3.10.1"
+  }
+}
