@@ -1,13 +1,13 @@
 import Typescript from 'rollup-plugin-typescript2'
 import Babel from 'rollup-plugin-babel'
 
-import { tmpDir } from 'os'
+import { tmpdir } from 'os'
 import { join } from 'path'
 
 const generate = format => ({
   input: join(__dirname, 'src', 'index.tsx'),
 
-  external: [ 'inferno' ],
+  external: [ 'inferno', 'inferno-component' ],
 
   output: { 
     file: join(__dirname, 'dist', `bundle.${format}.js`), 
@@ -15,13 +15,13 @@ const generate = format => ({
     
     /** UMD and Options */
     name: 'Slup.Monaco',
-    globals: { inferno: 'Inferno' }
+    globals: { inferno: 'Inferno', 'inferno-component': 'Inferno.Component' }
   },
 
   plugins: [ 
-    Typescript({ cacheRoot: join(tmpDir(), '.rpt2_cache') }), 
+    Typescript({ cacheRoot: join(tmpdir(), '.rpt2_cache') }), 
     Babel({ plugins: [ ['inferno', { imports: true } ] ] }) 
   ]
 })
 
-export default ['es', 'cjs', 'amd', 'umd', 'iife'].map(generate)
+export default ['es', 'cjs', 'amd', 'umd'].map(generate)

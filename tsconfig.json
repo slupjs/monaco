@@ -9,10 +9,6 @@
       "es7"
     ],
 
-    "jsx": "preserve",
-
-    "types": [
-      "inferno"
-    ]
+    "jsx": "preserve"
   }
 }
