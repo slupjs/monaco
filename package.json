@@ -1,6 +1,6 @@
 {
   "name": "@slup/monaco",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A monaco-editor wrapper for Inferno",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.es.js",
@@ -24,5 +24,8 @@
     "inferno": "3.10.1",
     "inferno-component": "3.10.1",
     "monaco-editor": "0.10.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
