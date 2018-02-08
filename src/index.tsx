@@ -110,6 +110,8 @@ export default class Editor extends Component<IProps, {}> {
       .filter(prop => monacoProps.indexOf(prop) !== -1)
       .filter(prop => this.props[prop] !== nextProps[prop])
       .filter(prop => {
+        if(!this.editor) return
+
         switch(prop) {
           case 'value':
             return this.editor.setValue(nextProps[prop]) 
@@ -128,7 +130,7 @@ export default class Editor extends Component<IProps, {}> {
         }
       })
     
-    if(nextProps['options'] !== this.props.options) {
+    if(nextProps['options'] !== this.props.options && this.editor) {
       this.editor.updateOptions(nextProps['options'])  
       return false
     }
