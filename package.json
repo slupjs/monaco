@@ -15,7 +15,7 @@
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-plugin-inferno": "3.4.0",
-    "rollup": "0.55.4",
+    "rollup": "0.56.2",
     "rollup-plugin-babel": "3.0.3",
     "rollup-plugin-typescript2": "0.11.1",
     "typescript": "2.7.2"
