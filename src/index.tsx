@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/monaco-editor/monaco.d.ts" />
-import Component from 'inferno-component'
+import { Component } from 'inferno'
 
 interface IProps {
   width?: number | string

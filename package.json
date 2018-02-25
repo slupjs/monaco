@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "inferno": "4.0.4",
-    "inferno-component": "4.0.4",
     "monaco-editor": "0.10.1"
   },
   "publishConfig": {

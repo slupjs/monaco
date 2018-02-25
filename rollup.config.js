@@ -15,7 +15,7 @@ const generate = format => ({
     
     /** UMD and Options */
     name: 'Slup.Monaco',
-    globals: { inferno: 'Inferno', 'inferno-component': 'Inferno.Component' }
+    globals: { inferno: 'Inferno' }
   },
 
   plugins: [ 
