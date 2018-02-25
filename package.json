@@ -21,7 +21,7 @@
     "typescript": "2.7.2"
   },
   "dependencies": {
-    "inferno": "3.10.1",
+    "inferno": "4.0.4",
     "inferno-component": "4.0.4",
     "monaco-editor": "0.10.1"
   },
