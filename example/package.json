@@ -11,6 +11,6 @@
     "copy-webpack-plugin": "4.4.0",
     "inferno-component": "3.10.1",
     "monaco-editor": "0.10.1",
-    "webpack": "3.10.0"
+    "webpack": "4.0.0"
   }
 }
