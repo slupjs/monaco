@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "inferno": "5.0.1",
-    "monaco-editor": "0.10.1"
+    "monaco-editor": "0.11.1"
   },
   "publishConfig": {
     "access": "public"
