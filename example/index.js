@@ -1,5 +1,4 @@
-import { render } from 'inferno'
-import Component from 'inferno-component'
+import { Component, render } from 'inferno'
 import Editor from '..'
 
 class App extends Component {
@@ -21,6 +20,6 @@ class App extends Component {
 }
 
 render(
-  <App />, 
+  <App />,
   document.getElementById('root')
 )

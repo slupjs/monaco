@@ -7,10 +7,9 @@
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
-    "babel-plugin-inferno": "4.0.0",
+    "babel-plugin-inferno": "5.0.1",
     "copy-webpack-plugin": "4.4.0",
-    "inferno-component": "4.0.4",
-    "monaco-editor": "0.10.1",
+    "monaco-editor": "0.11.1",
     "webpack": "3.10.0"
   }
 }
