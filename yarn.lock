@@ -381,20 +381,20 @@ iconv-lite@^0.4.17, iconv-lite@~0.4.13:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
-inferno-shared@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/inferno-shared/-/inferno-shared-5.0.1.tgz#2f7ebdc36312afa4a9ef48b8aa71c3aa9be2068a"
+inferno-shared@5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/inferno-shared/-/inferno-shared-5.0.3.tgz#dc9d437e1fb783c7669135d81027d5cc972a5d9b"
 
-inferno-vnode-flags@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-5.0.1.tgz#fbb377070ee9d2bd93978a6faa58cae15dd746b0"
+inferno-vnode-flags@5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-5.0.3.tgz#87145797e54b32bb4e18461de1cb0eb34117a765"
 
-inferno@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/inferno/-/inferno-5.0.1.tgz#dee61c256629cce3b263bb2ec7175813a702be08"
+inferno@5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/inferno/-/inferno-5.0.3.tgz#7349411364b238b3a3186b697b241c12f7d37f34"
   dependencies:
-    inferno-shared "5.0.1"
-    inferno-vnode-flags "5.0.1"
+    inferno-shared "5.0.3"
+    inferno-vnode-flags "5.0.3"
     opencollective "^1.0.3"
 
 inquirer@3.0.6:
