@@ -1,5 +1,9 @@
-/// <reference path="../node_modules/monaco-editor/monaco.d.ts" />
+import * as monaco from 'monaco-editor'
 import { Component } from 'inferno'
+
+declare global {
+  interface Window { MonacoEnvironment: any }
+}
 
 interface IProps {
   width?: number | string
@@ -18,15 +22,23 @@ const noRequire = modules => {
   throw new Error(`Cannot use function require to load ${modules.join(', ')}`)
 }
 
-declare global {
-  interface Window {
-    monaco: any
+self.MonacoEnvironment = {
+  getWorkerUrl: function(moduleId, label) {
+    switch(label) {
+      case 'json': return './json.worker.bundle.js'
+      case 'css': return './css.worker.bundle.js'
+      case 'html': return './html.worker.bundle.js'
+
+      case 'javascript':
+      case 'typescript': return './ts.worker.bundle.js'
+
+      default: return './editor.worker.bundle.js'
+    }
   }
 }
 
 export default class Editor extends Component<IProps, {}> {
   private wrapper: HTMLDivElement
-  private loaded: boolean
   private editor: monaco.editor.ICodeEditor
   private value: string
 
@@ -55,9 +67,7 @@ export default class Editor extends Component<IProps, {}> {
    * Creates the editor
    */
   private createEditor() {
-    const editor = window.monaco.editor
-
-    this.editor = editor.create(this.wrapper, {
+    this.editor = monaco.editor.create(this.wrapper, {
       value: this.props.value,
       language: this.props.language || 'typescript',
       theme: this.props.theme,
@@ -80,15 +90,7 @@ export default class Editor extends Component<IProps, {}> {
    * and inform the consumer of that action via the editorDidMount callback
    */
   public componentDidMount() {
-    if (!this.loaded) {
-      const require = this.props.require || (window as any).require || noRequire
-
-      this.emit('editorWillMount', this.editor)
-      require(['vs/editor/editor.main'], this.createEditor.bind(this))
-    } else {
-      this.createEditor()
-    }
-
+    this.createEditor() 
   }
 
   /**
@@ -96,7 +98,7 @@ export default class Editor extends Component<IProps, {}> {
    */
   public componentWillUnmount() {
     this.emit('editorWillUnmount', this.editor)
-    if(this.editor) this.editor.dispose
+    if(this.editor) this.editor.dispose()
   }
 
   /**
@@ -117,10 +119,10 @@ export default class Editor extends Component<IProps, {}> {
             return this.editor.setValue(nextProps[prop]) 
 
           case 'theme':
-            return window.monaco.editor.setTheme(nextProps[prop])
+            return monaco.editor.setTheme(nextProps[prop])
         
           case 'language':
-            return window.monaco.editor.setModelLanguage(
+            return monaco.editor.setModelLanguage(
               this.editor.getModel(), 
               nextProps[prop]
             )
