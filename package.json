@@ -13,7 +13,7 @@
     "watch": "rollup -c -w"
   },
   "devDependencies": {
-    "babel-core": "6.26.0",
+    "babel-core": "6.26.3",
     "babel-plugin-inferno": "5.0.1",
     "rollup": "0.57.1",
     "rollup-plugin-babel": "3.0.3",
